@@ -1,11 +1,10 @@
 # Site wide configuration
-theme: jekyll-theme-so-simple
-skin: "/assets/css/skins/dark.css"
-title: LGBTQIA+ Stories on Royal Road
+
+title: So Simple Theme
 locale: en_US
-description: A collection of LGBTQIA+ Friendly Stories Published on Royal Road
-logo: logo.png
-url: https://royalroadlgbtqia.github.io/list
+description: A simple and clean responsive Jekyll theme for words and photos.
+logo: site-logo.png
+url: https://mmistakes.github.io/so-simple-theme
 
 # Jekyll configuration
 
@@ -37,24 +36,24 @@ comments: true
 
 # Site owner
 owner:
-  name: LGBTQIA+ on RR
-  avatar: Safe_space_for_lgbtqia_with_flag_by_mikesafetysignsupply.png
-  email: asvoria@live.com
-  disqus-shortname: 
-  twitter: 
-  facebook: LGBTQIAonRR
-  github: royalroadlgbtqia
+  name: Michael Rose
+  avatar: michael-rose-photo.jpg
+  email: michael@mademistakes.com
+  disqus-shortname: sosimpletheme
+  twitter: mmistakes
+  facebook: michaelrose
+  github: mmistakes
   stackexchange:
   linkedin:
-  instagram: 
+  instagram: mmistakes
   flickr:
-  tumblr: 
+  tumblr: mademistakes
   pinterest:
   weibo:
   google:
-    plus: 
-    analytics: 
-    verify: 
-    ad-client: 
-    ad-slot: 
-  bing-verify: 
+    plus: MichaelRoseDesign
+    analytics: UA-2011187-2
+    verify: UQj93ERU9zgECodaaXgVpkjrFn9UrDMEzVamacSoQ8Y
+    ad-client: ca-pub-7328585512091257
+    ad-slot: 7855747535
+  bing-verify: D81F4C18A6CB3018F64D7C827D953DFD
