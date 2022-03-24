@@ -3,7 +3,7 @@ layout: post
 title: "BL"
 excerpt: "Boys Love"
 categories: articles
-tags: [sample-post, link-post]
+tags: [sample-post, link-post, BL]
 link: http://mademistakes.com  
 ---
 
