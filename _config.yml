@@ -1,8 +1,8 @@
 # Site wide configuration
-
-title: So Simple Theme
+skin: "/assets/css/skins/default.css"
+title: LGBTQIA+ Stories on Royal Road
 locale: en_US
-description: A simple and clean responsive Jekyll theme for words and photos.
+description: A collection of LGBTQIA+ Friendly Stories Published on Royal Road
 logo: logo.png
 url: https://royalroadlgbtqia.github.io/list
 
