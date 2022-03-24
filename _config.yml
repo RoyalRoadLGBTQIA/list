@@ -1,5 +1,5 @@
 # Site wide configuration
-skin: "/assets/css/skins/default.css"
+skin: "/assets/css/skins/dark.css"
 title: LGBTQIA+ Stories on Royal Road
 locale: en_US
 description: A collection of LGBTQIA+ Friendly Stories Published on Royal Road
