@@ -1,26 +1,26 @@
 ---
 layout: page
-title: Tag Index
-excerpt: "An archive of posts sorted by tag."
-search_omit: true
+title: About the Jekyll Theme
+excerpt: "So Simple is a responsive Jekyll theme for your words and images."
+modified: 2014-08-08T19:44:38.564948-04:00
+image:
+  feature: so-simple-sample-image-4.jpg
+  credit: WeGraphics
+  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
 ---
 
-{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-{% assign tags_list = site_tags | split:',' | sort %}
+Looking for a simple, responsive, theme for your Jekyll powered blog? Well look no further. Here be **So Simple Theme**, the follow up to [**Minimal Mistakes**](http://mmistakes.github.io/minimal-mistakes) --- by designer slash illustrator [Michael Rose](http://mademistakes.com).
 
-<ul class="tag-box inline">
-  {% for item in (0..site.tags.size) %}{% unless forloop.last %}
-    {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
-    <li><a href="#{{ this_word }}">{{ this_word }} <span>{{ site.tags[this_word].size }}</span></a></li>
-  {% endunless %}{% endfor %}
-</ul>
+## So Simple Theme is all about:
 
-{% for item in (0..site.tags.size) %}{% unless forloop.last %}
-  {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
-  <h2 id="{{ this_word }}">{{ this_word }}</h2>
-  <ul class="post-list">
-  {% for post in site.tags[this_word] %}{% if post.title != null %}
-    <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}<span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span></a></li>
-  {% endif %}{% endfor %}
-  </ul>
-{% endunless %}{% endfor %}
+* Responsive templates. Looking good on mobile, tablet, and desktop.
+* Gracefully degrading in older browsers. Compatible with Internet Explorer 9+ and all modern browsers.
+* Minimal embellishments and subtle animations.
+* Optional large feature images for posts and pages.
+* [Custom 404 page]({{ site.url }}/404.html) to get you started.
+* [Simple site search](https://github.com/christian-fei/Simple-Jekyll-Search)
+* Support for Disqus Comments
+
+<a markdown="0" href="{{ site.url }}/theme-setup" class="btn">Install So Simple Theme</a>
+
+[^1]: Example: *domain.com/category-name/post-title*
