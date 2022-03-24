@@ -49,7 +49,7 @@
       {% endunless %}
       // the, the normal lunr index initialization
       this.field('title')
-      this.field('excerpt')
+      //this.field('excerpt')
       this.field('categories')
       this.field('tags')
       this.ref('id')
@@ -60,7 +60,7 @@
       for (var item in store) {
         this.add({
           title: store[item].title,
-          excerpt: store[item].excerpt,
+          //excerpt: store[item].excerpt,
           categories: store[item].categories,
           tags: store[item].tags,
           id: item
