@@ -1,4 +1,5 @@
 # Site wide configuration
+theme: jekyll-theme-so-simple
 skin: "/assets/css/skins/dark.css"
 title: LGBTQIA+ Stories on Royal Road
 locale: en_US
