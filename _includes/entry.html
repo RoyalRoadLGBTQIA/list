@@ -17,7 +17,7 @@
             {% assign entry_image = entry_image | escape %}
             <img class="entry-image u-photo" src="{{ entry_image }}" alt="">
           {% endif %}
-          <div class="entry-excerpt p-summary">
+          <div class="entry-excerpt p-summary" maxlength="20">
           {{ title }}
           {% unless page.show_excerpts == false %}
             <p>

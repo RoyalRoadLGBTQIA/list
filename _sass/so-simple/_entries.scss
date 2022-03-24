@@ -123,6 +123,9 @@
     > * {
       font-size: 1rem;
       font-weight: lighter !important;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-height: 8ch;
     }
   }
 
@@ -187,8 +190,13 @@
     > * {
       font-size: 1rem;
       font-weight: lighter !important;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-height: 8ch;
     }
   }
+
+
 
   .entry-meta {
     -webkit-box-ordinal-group: 3;
