@@ -20,15 +20,15 @@ So Simple now requires [Jekyll](http://jekyllrb.com/) 3.0. Make sure to run `bun
 
 If you are creating a new Jekyll site using So Simple follow these steps:
 
-1. Fork the [So Simple repo](http://github.com/royalroadlgbtqia/so-simple-theme/fork).
+1. Fork the [So Simple repo](http://github.com/royalroadlgbtqia/list/fork).
 2. Clone the repo you just forked and rename it.
 3. [Install Bundler](http://bundler.io) `gem install bundler` and Run `bundle install` to install Jekyll and all dependencies.
 4. Update `_config.yml`, add navigation, and replace demo posts and pages with your own. Full details below.
 
 If you want to use So Simple with an existing Jekyll site follow these steps:
 
-1. [Download So Simple](https://github.com/royalroadlgbtqia/so-simple-theme/archive/master.zip) and unzip.
-2. Rename `so-simple-theme-master` to something meaningful ie: `new-site`
+1. [Download So Simple](https://github.com/royalroadlgbtqia/list/archive/master.zip) and unzip.
+2. Rename `list-master` to something meaningful ie: `new-site`
 3. Run `bundle install` to install Jekyll and all dependencies.
 4. Remove demo posts/pages and replace with your own posts, pages, and any other content you want to move over.
 5. Update posts' and pages' YAML to match variables used by So Simple. Full details below.
@@ -60,7 +60,7 @@ bundle exec jekyll serve
 How So Simple is organized and what the various files are. All posts, layouts, includes, stylesheets, assets, and whatever else is grouped nicely under the root folder. The compiled Jekyll site outputs to `_site/`.
 
 ```bash
-so-simple-theme/
+list/
 ├── _includes/
 |    ├── browser-upgrade.html    # prompt to install a modern browser for < IE9
 |    ├── disqus-comments.html    # Disqus comments script
@@ -120,7 +120,7 @@ Used to generate absolute URLs for sitemaps, feeds and for generating canonical 
 Examples:
 
 ```yaml
-url: https://royalroadlgbtqia.github.io/so-simple-theme
+url: https://royalroadlgbtqia.github.io/list
 url: http://localhost:4000
 url: http://yourdomain.com
 url: 
@@ -316,7 +316,7 @@ From the theme's root, run `grunt` to concatenate JavaScript files, and optimize
 
 ## Questions?
 
-Found a bug or aren't quite sure how something works? By all means Ping me on Twitter [@royalroadlgbtqia](http://twitter.com/royalroadlgbtqia) or [file a GitHub Issue](https://github.com/royalroadlgbtqia/so-simple-theme/issues/new). And if you make something cool with this theme feel free to let me know.
+Found a bug or aren't quite sure how something works? By all means Ping me on Twitter [@royalroadlgbtqia](http://twitter.com/royalroadlgbtqia) or [file a GitHub Issue](https://github.com/royalroadlgbtqia/list/issues/new). And if you make something cool with this theme feel free to let me know.
 
 ---
 

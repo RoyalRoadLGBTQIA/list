@@ -1,13 +1,13 @@
 {
-  "name": "so-simple-theme",
+  "name": "list",
   "author": "Michael Rose <michael@mademistakes.com>",
-  "homepage": "http://royalroadlgbtqia.github.io/so-simple-theme/",
+  "homepage": "http://royalroadlgbtqia.github.io/list/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/royalroadlgbtqia/so-simple-theme.git"
+    "url": "git://github.com/royalroadlgbtqia/list.git"
   },
   "bugs": {
-    "url": "https://github.com/royalroadlgbtqia/so-simple-theme/issues"
+    "url": "https://github.com/royalroadlgbtqia/list/issues"
   },
   "engines": {
     "node": ">= 0.10.0"
