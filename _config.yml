@@ -3,7 +3,7 @@
 title: So Simple Theme
 locale: en_US
 description: A simple and clean responsive Jekyll theme for words and photos.
-logo: site-logo.png
+logo: logo.png
 url: https://royalroadlgbtqia.github.io/list
 
 # Jekyll configuration
@@ -39,21 +39,21 @@ owner:
   name: LGBTQIA+ on RR
   avatar: Safe_space_for_lgbtqia_with_flag_by_mikesafetysignsupply.png
   email: asvoria@live.com
-  disqus-shortname: sosimpletheme
-  twitter: royalroadlgbtqia
+  disqus-shortname: 
+  twitter: 
   facebook: LGBTQIAonRR
   github: royalroadlgbtqia
   stackexchange:
   linkedin:
-  instagram: royalroadlgbtqia
+  instagram: 
   flickr:
-  tumblr: mademistakes
+  tumblr: 
   pinterest:
   weibo:
   google:
-    plus: MichaelRoseDesign
-    analytics: UA-2011187-2
-    verify: UQj93ERU9zgECodaaXgVpkjrFn9UrDMEzVamacSoQ8Y
-    ad-client: ca-pub-7328585512091257
-    ad-slot: 7855747535
-  bing-verify: D81F4C18A6CB3018F64D7C827D953DFD
+    plus: 
+    analytics: 
+    verify: 
+    ad-client: 
+    ad-slot: 
+  bing-verify: 
