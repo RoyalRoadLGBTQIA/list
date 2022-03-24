@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Sample Link Post"
-excerpt: "Example and code for using link posts."
+title: "BL"
+excerpt: "Boys Love"
 categories: articles
 tags: [sample-post, link-post]
 link: http://mademistakes.com  
