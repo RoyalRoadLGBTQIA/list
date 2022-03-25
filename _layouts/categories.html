@@ -52,7 +52,7 @@ layout: page
     {% assign category_names_list = category_names | split: "," %}
     {% assign category_count = category_counts[forloop.index0] %}
     {% for category_name in category_names_list %}
-      {% if category_names != "docs" %}
+      {% if category_name != "docs" %}
       <li>
         <a href="#{{ category_name | slugify }}">
           <strong>{{ category_name }}</strong> <span class="taxonomy-count">{{ category_count }}</span>
