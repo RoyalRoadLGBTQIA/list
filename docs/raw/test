@@ -1,2 +1,11 @@
 [\r\n].*[)].*|https.*
 .*[)].*|https.*
+
+(  - .*ooxxxoo \n).*\n*\n*---
+
+this can find lines across
+
+(  - .*ooxxxoo \n)(.*\n*\n*---)
+
+(  - .*ooxxxoo \n)(.*\n*\n*)(---)
+$1---\n$2\nMDEND\n$3
