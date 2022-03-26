@@ -8,7 +8,7 @@ with open ("raw_part1.txt", "r") as rawfile:
     for line in rawfile:
         if "==MDEND==" in line:
             a_string = "".join(infolines)
-            file = open(filenames[i], 'w')
+            file = open(filenames[i].strip('\n'), 'w')
             file.write(a_string)
             file.close()
             i = i + 1

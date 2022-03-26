@@ -12,3 +12,8 @@ $1---\n$2\nMDEND\n$3
 
 link: (.*)fiction(.*)/(.*)
 link: $1fiction$2/$3\nimage:\n  path: $1xxxooxxx$2/jjjxxx$3
+
+(link: .*\n)(.*\n.*\n.*\n.*\n.*\n)
+
+(link: .*\n)((\n|.)*?)(---)
+$2$1$4
