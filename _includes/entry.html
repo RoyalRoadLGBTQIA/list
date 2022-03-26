@@ -15,6 +15,13 @@
               {% assign entry_image = entry_image | relative_url %}
             {% endunless %}
             {% assign entry_image = entry_image | escape %}
+
+            <object data="nofound.png" type="image/png">
+              <img src="https://cdn.sstatic.net/Img/unified/sprites.svg?v=e5e58ae7df45" alt="Stack Overflow logo and icons and such">
+            </object>
+
+
+
             <img class="entry-image u-photo" src="{{ entry_image }}" alt="">
           {% endif %}
           <div class="entry-excerpt p-summary" maxlength="20">
