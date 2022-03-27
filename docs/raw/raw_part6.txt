@@ -98,7 +98,7 @@ image:
 categories:
   - ONGOING
 tags:
-  -Queer
+  - Queer
 link: https://www.royalroad.com/fiction/32970/a-just-gods-angels
 
 ---
