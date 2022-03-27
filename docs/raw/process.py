@@ -1,10 +1,10 @@
 i = 0
 filenames = []
-with open('filename.txt') as namefile:
+with open('filename2.txt') as namefile:
     filenames = namefile.readlines()
 
 infolines = []
-with open ("raw_part1.txt", "r") as rawfile:
+with open ("raw_part2.txt", "r") as rawfile:
     for line in rawfile:
         if "==MDEND==" in line:
             a_string = "".join(infolines)

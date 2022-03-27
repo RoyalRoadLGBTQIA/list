@@ -4,8 +4,8 @@
   url: /
 # - title: Posts
 #   url: /posts/
-- title: Status
-  url: /categories/
+# - title: Status
+#   url: /categories/
 - title: Tags
   url: /tags/
 # - title: Recipes
