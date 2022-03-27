@@ -27,16 +27,22 @@ Completed,
 categories:\n  - COMPLETED\n
 
 -->> 
-==MDEND==\n\n---\ntitle: "
+==MDEND==\n---\ntitle: "
 
 (http.*)
-$1
+"\n$1
+
+(  - (.*)\n)
+$1tags:\n
 
 (^tags.*\n)((\n|.)*?)(^\S)
-$1$2---\n\n$4
+$1$2---\n$4
 
 (http.*)royalroad(.*)fiction/(.*)/(.*)
 image:\n  path: $1royalroadcdn$2public/covers-full/$3-$4.jpg\n$1royalroad$2fiction/$3/$4
 
 (^http.*\n)((\n|.)*?)(---)
 $2link: $1\n$4
+
+fiction/(.*)/
+2022-03-06-F$1.md
