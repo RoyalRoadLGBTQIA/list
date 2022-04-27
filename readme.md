@@ -2,6 +2,10 @@ Planning on the updates
 1. Use the RSS syndicate to track latest update.
 2. Automatically assign HIATUS status on works 2 months without update.
 
+```
+bundle exec jekyll serve
+```
+
 ```html
 <script type="text/javascript" src="https://rss2json.com/gfapi.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

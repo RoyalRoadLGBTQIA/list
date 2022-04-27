@@ -21,7 +21,7 @@
 
           {% endif %}
           <div class="entry-excerpt p-summary" maxlength="20">
-          {{ title }}
+          {{ title }} <br> {{ entry.categories }}
           {% unless page.show_excerpts == false %}
             <p>
               {% if entry.excerpt %}
