@@ -18,7 +18,7 @@ remote_theme: mmistakes/so-simple-theme
 skin: "/assets/css/skins/dark.css"
 locale: en-US
 title: "LGBTQIA+ Stories on Royal Road"
-description: "A collection of LGBTQIA+ Friendly Stories Published on Royal Road. <br>This little tool only sort and search by gender and sexual orientation terms."
+description: "A collection of LGBTQIA+ Friendly Stories Published on Royal Road. <br>This little tool only sort and search by gender and sexual orientation terms.<br>Post your story on RR Forum LGBTQIA+ Thread at Recommendation section to get listed!"
 baseurl: # the subpath of your site, e.g. "/blog"
 url: # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 logo: 
