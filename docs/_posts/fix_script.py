@@ -1,15 +1,29 @@
-
+import time
 import os
+import feedparser
+from datetime import datetime
 
+i = 0
 newFileName = []
-stringFind = 'link: https://www.royalroad.com/fiction/'
+stringSyndi = 'https://www.royalroad.com/syndication/'
 
 for filename in os.listdir(os.getcwd()):
-   if filename.endswith(".md"):
-      with open(os.path.join(os.getcwd(), filename), 'r') as rawfile: 
-         for line in rawfile:
-            if stringFind in line:
-               x = line.split("/")
-               newFileName = "2022-03-20-F" + x[4] + ".md"
-               break
-      os.rename(filename, newFileName)
+   if filename.startswith("2022-03-20"):
+      basename = os.path.basename(filename)
+      rrid_arr = basename.split("-")
+      rrid = rrid_arr[3].replace(".md", "")
+      rrid_url = rrid.replace("F", stringSyndi)
+      NewsFeed = feedparser.parse(rrid_url)
+      if NewsFeed.entries:
+         entry = NewsFeed.entries[0]
+         date_time_str = entry.published.split(" ")
+         date_str = date_time_str[1] + " " + date_time_str[2] + " " + date_time_str[3]
+         date_time_obj = datetime.strptime(date_str, '%d %b %Y')
+         newFileName = date_time_obj.strftime("%Y-%m-%d") + "-" + rrid + ".md"
+         os.rename(filename, newFileName)
+         i = i + 1
+         if i > 10:
+            time.sleep(15)
+            i = 0
+      else:
+         print ("Missing"+rrid)
