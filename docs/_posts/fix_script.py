@@ -10,8 +10,11 @@ stringSyndi = 'https://www.royalroad.com/syndication/'
 for filename in os.listdir(os.getcwd()):
    if filename.startswith("2022-04-28-F"):
       print ("Skip...")
+   elif filename.endswith(".py"):
+      print ("Py file...")
    else:
-      basename = os.path.basename(filename)
+      basename = filename
+      print (basename)
       rrid_arr = basename.split("-")
       rrid = rrid_arr[3].replace(".md", "")
       rrid_url = rrid.replace("F", stringSyndi)
@@ -25,24 +28,26 @@ for filename in os.listdir(os.getcwd()):
          delta = datetime.today() - date_time_obj
 
          if delta.days > 40:
-            print(delta.days)
             stringFind = 'ONGOING'
+            replaceStatus = 0
             with open(os.path.join(os.getcwd(), filename), 'r+') as rawfile: 
-               mark_i = 0
+               newContent = ""
                for line in rawfile:
                   if stringFind in line:
                      line = line.replace(stringFind,'HIATUS')
-                     file_object = open('RRID.txt', 'a')
-                     file_object.write(line)
-                     file_object.close()
-                     break
+                     replaceStatus = 1
+                     print("Line repalced...")
+                  newContent = newContent + line
+               
+               if replaceStatus == 1:
+                  rawfile.write(newContent)
 
          i = i + 1
          if i > 30:
             time.sleep(1)
             i = 0
          if newFileName in basename:
-            print ("m: " + str(i))
+            print (".")
          else:
             os.rename(filename, newFileName)
 
