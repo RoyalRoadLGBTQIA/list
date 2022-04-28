@@ -21,13 +21,17 @@
 
           {% endif %}
           <div class="entry-excerpt p-summary" maxlength="20">
-          {{ title }} <br> {{ entry.categories }}
+          {{ title }} <br>
+          <time class="entry-date dt-published" datetime="{{ entry.date | date_to_xmlschema }}">
+            Last update:&nbsp; {%- assign date_format = site.date_format | default: "%B %-d, %Y" -%}
+            {{ entry.date | date: date_format }}
+          </time>
           {% unless page.show_excerpts == false %}
-            <p>
+            
               {% if entry.excerpt %}
                 {{ entry.excerpt | markdownify }}
               {% endif %}
-            </p>
+            
           {% endunless %}
         </div>
         </a> <a href="{{ entry.link }}" rel="bookmark"></a>
