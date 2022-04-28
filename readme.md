@@ -1,7 +1,6 @@
 Planning on the updates
 1. Use the RSS syndicate to track latest update.
-2. Automatically assign HIATUS status on works 2 months without update.
-
+2. If found HIATUS, do not read the feed
 ```
 bundle exec jekyll serve
 ```
