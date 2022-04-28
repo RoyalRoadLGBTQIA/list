@@ -40,6 +40,7 @@ for filename in os.listdir(os.getcwd()):
                   newContent = newContent + line
                
                if replaceStatus == 1:
+                  rawfile.seek(0)
                   rawfile.write(newContent)
 
          i = i + 1
