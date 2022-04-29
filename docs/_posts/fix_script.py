@@ -8,8 +8,10 @@ newFileName = []
 stringSyndi = 'https://www.royalroad.com/syndication/'
 
 for filename in os.listdir(os.getcwd()):
-   if filename.startswith("2022-04-28-F"):
-      print ("Skip...")
+   if filename.startswith("2022-04-29-F"):
+      print ("Skip...29")
+   elif filename.startswith("2022-04-28-F"):
+      print ("Skip...28")
    elif filename.endswith(".py"):
       print ("Py file...")
    else:
@@ -42,6 +44,7 @@ for filename in os.listdir(os.getcwd()):
                if replaceStatus == 1:
                   rawfile.seek(0)
                   rawfile.write(newContent)
+                  break
 
          i = i + 1
          if i > 30:
