@@ -5,6 +5,7 @@ import os
 newFileName = []
 stat_complete = 0
 stringFind = 'link: https://www.royalroad.com/fiction/'
+stringStat = 'HIATUS'
 
 for filename in os.listdir(os.getcwd()):
    if filename.startswith("h"):
@@ -26,13 +27,16 @@ for filename in os.listdir(os.getcwd()):
                else:
                   newFileName = filename.replace('h','')
                   stat_complete = 1
+         rawfile.seek(0)
+         print (stat_complete)
+         if stat_complete == 1:
+            for line in rawfile:
+               if stringStat in line:
+                  line = line.replace(stringStat,'COMPLETED')
+               newContent = newContent + line
+            print (newContent)
 
-         for line in rawfile:
-            if 'HIATUS' in line:
-               if stat_complete == 1:
-                  line = line.replace('HIATUS','COMPLETED')
-            newContent = newContent + line
-         
+            
          if stat_complete == 1:
             rawfile.seek(0)
             rawfile.write(newContent)
