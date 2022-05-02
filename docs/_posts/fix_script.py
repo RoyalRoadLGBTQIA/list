@@ -8,10 +8,10 @@ newFileName = []
 stringSyndi = 'https://www.royalroad.com/syndication/'
 
 for filename in os.listdir(os.getcwd()):
-   if filename.startswith("2022-04-30-F"):
-      print ("Skip...29")
+   if filename.startswith("2022-05-02-F"):
+      print ("Skip...2")
    elif filename.startswith("2022-05-01-F"):
-      print ("Skip...28")
+      print ("Skip...1")
    elif filename.startswith("h"):
       print ("Skip...hiatus")
    elif filename.endswith(".py"):
