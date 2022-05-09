@@ -8,7 +8,7 @@ newFileName = []
 stringSyndi = 'https://www.royalroad.com/syndication/'
 
 for filename in os.listdir(os.getcwd()):
-   if filename.startswith("2022-05-07-F"):
+   if filename.startswith("2022-05-09-F"):
       print ("Skip...3")
    elif filename.startswith("2022-05-08-F"):
       print ("Skip...3")
@@ -52,9 +52,7 @@ for filename in os.listdir(os.getcwd()):
          if i > 30:
             time.sleep(1)
             i = 0
-         if newFileName in basename:
-            print (".")
-         else:
+         if newFileName not in basename:
             os.rename(filename, newFileName)
 
       else:
