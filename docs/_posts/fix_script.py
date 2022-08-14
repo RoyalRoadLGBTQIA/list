@@ -50,7 +50,7 @@ for filename in os.listdir(os.getcwd()):
          newFileName = date_time_obj.strftime("%Y-%m-%d") + "-" + rrid + ".md"
          delta = datetime.today() - date_time_obj
 
-         if delta.days > 40:
+         if delta.days > 60:
             stringFind = 'ONGOING'
             replaceStatus = 0
             with open(os.path.join(os.getcwd(), filename), 'r+') as rawfile: 
