@@ -27,7 +27,7 @@ for filename in os.listdir(os.getcwd()):
       print ("Skip...hiatus...")
    elif filename.endswith(".py"):
       print ("Py file...")
-   elif filename.startswith("2022"):
+   elif filename.startswith("2022-"):
       basename = filename
       print (basename)
       rrid_arr = basename.split("-")
