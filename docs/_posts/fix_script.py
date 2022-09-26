@@ -77,8 +77,8 @@ for filename in os.listdir(os.getcwd()):
                      break
 
             i = i + 1
-            if i > 10:
-               time.sleep(2)
+            if i > 3:
+               time.sleep(1)
                i = 0
             if newFileName not in basename:
                os.rename(filename, newFileName)
