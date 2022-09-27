@@ -75,7 +75,8 @@ for filename in os.listdir(os.getcwd()):
                      rawfile.seek(0)
                      rawfile.write(newContent)
                      break
-
+            
+            time.sleep(1)
             i = i + 1
             if i > 3:
                time.sleep(1)
