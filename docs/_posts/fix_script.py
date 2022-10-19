@@ -4,12 +4,14 @@ import io
 import feedparser, requests, time
 from datetime import datetime
 
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36', "Upgrade-Insecure-Requests": "1","DNT": "1","Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8","Accept-Language": "en-US,en;q=0.5","Accept-Encoding": "gzip, deflate"}
+
 i = 0
 newFileName = []
 stringSyndi = 'https://www.royalroad.com/fiction/syndication/'
 
 for filename in os.listdir(os.getcwd()):
-   if filename.startswith("2022-10-17-F"):
+   if filename.startswith("2022-10-20-F"):
       print ("Skip...3")
    elif filename.startswith("2021"):
       print ("Skip...2021 done")
@@ -44,10 +46,10 @@ for filename in os.listdir(os.getcwd()):
          rrid = rrid_arr[3].replace(".md", "")
          rrid_url = rrid.replace("F", stringSyndi)
          print (rrid_url)
-         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36', "Upgrade-Insecure-Requests": "1","DNT": "1","Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8","Accept-Language": "en-US,en;q=0.5","Accept-Encoding": "gzip, deflate"}
-         response = requests.get(rrid_url, headers=headers, timeout=3)
+
+         response = requests.get(rrid_url, headers=headers, timeout=10)
          #print (response.content)
-         content = io.BytesIO(response.content)
+         content = io.BytesIO(response.content.strip())
 
          NewsFeed = feedparser.parse(content)
          print ("---")
@@ -76,10 +78,9 @@ for filename in os.listdir(os.getcwd()):
                      rawfile.write(newContent)
                      break
             
-            time.sleep(2)
             i = i + 1
-            if i > 3:
-               time.sleep(2)
+            if i > 30:
+               time.sleep(1)
                i = 0
             if newFileName not in basename:
                os.rename(filename, newFileName)
