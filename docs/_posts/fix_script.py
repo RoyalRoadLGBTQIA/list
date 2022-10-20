@@ -11,7 +11,7 @@ newFileName = []
 stringSyndi = 'https://www.royalroad.com/fiction/syndication/'
 
 for filename in os.listdir(os.getcwd()):
-   if filename.startswith("2022-10-20-F"):
+   if filename.startswith("2022-10-21-F"):
       print ("Skip...3")
    elif filename.startswith("2021"):
       print ("Skip...2021 done")
@@ -47,7 +47,7 @@ for filename in os.listdir(os.getcwd()):
          rrid_url = rrid.replace("F", stringSyndi)
          print (rrid_url)
 
-         response = requests.get(rrid_url, headers=headers, timeout=10)
+         response = requests.get(rrid_url, headers=headers, timeout=100)
          #print (response.content)
          content = io.BytesIO(response.content.strip())
 
