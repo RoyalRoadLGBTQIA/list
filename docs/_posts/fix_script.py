@@ -11,7 +11,7 @@ newFileName = []
 stringSyndi = 'https://www.royalroad.com/fiction/syndication/'
 
 for filename in os.listdir(os.getcwd()):
-   if filename.startswith("2023-01-11-F"):
+   if filename.startswith("2023-01-13-F"):
       print ("Skip...3")
    elif filename.startswith("2021"):
       print ("Skip...2021 done")
@@ -29,7 +29,7 @@ for filename in os.listdir(os.getcwd()):
       print ("Skip...hiatus...")
    elif filename.endswith(".py"):
       print ("Py file...")
-   elif filename.startswith("2022-"):
+   elif filename.startswith("2023-"):
       preStrFind = 'ONGOING'
       strOngoing = False
       with open(os.path.join(os.getcwd(), filename), 'r+') as checkFile: 
