@@ -3,6 +3,7 @@ Planning on the updates
 2. If found HIATUS, do not read the feed
 ```
 bundle exec jekyll serve
+npm run build:js .
 ```
 
 ```html

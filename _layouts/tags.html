@@ -47,6 +47,50 @@ layout: page
 {% assign tag_counts = tag_counts | split: "|" %}
 
 
+
+{% assign categories_max = 0 %}
+{% for category in site.categories %}
+  {% if category[1].size > categories_max %}
+    {% assign categories_max = category[1].size %}
+  {% endif %}
+{% endfor %}
+
+{% assign category_names_array = "" %}
+{% assign category_counts = "" %}
+{% assign first_array_element = true %}
+{% for i in (1..categories_max) reversed %}
+  {% assign category_names = "" %}
+  {% assign first_category = true %}
+
+  {% for category in site.categories %}
+    {% if category[1].size == i %}
+      {% if first_category %}
+        {% assign first_category = false %}
+      {% else %}
+        {% assign category_names = category_names | append: "," %}
+      {% endif %}
+      {% assign category_names = category_names | append: category[0] %}
+    {% endif %}
+  {% endfor %}
+
+  {% if category_names != "" %}
+    {% assign category_names = category_names | split: "," | sort | join: "," %}
+
+    {% if first_array_element %}
+      {% assign first_array_element = false %}
+    {% else %}
+      {% assign category_names_array = category_names_array | append: "|" %}
+      {% assign category_counts = category_counts | append: "|" %}
+    {% endif %}
+    {% assign category_names_array = category_names_array | append: category_names %}
+    {% assign category_counts = category_counts | append: i %}
+  {% endif %}
+{% endfor %}
+
+{% assign category_names_array = category_names_array | split: "|" %}
+{% assign category_counts = category_counts | split: "|" %}
+
+
 <ul class="taxonomy-index">
   {% for tag_names in tag_names_array %}
     {% assign tag_names_list = tag_names | split: "," %}
@@ -57,6 +101,25 @@ layout: page
           <strong>{{ tag_name }}</strong> <span class="taxonomy-count">{{ tag_count }}</span>
         </a>
       </li>
+    {% endfor %}
+  {% endfor %}
+</ul>
+
+<ul class="taxonomy-index">
+  {% for category_names in category_names_array %}
+    {% assign category_names_list = category_names | split: "," %}
+    {% assign category_count = category_counts[forloop.index0] %}
+    {% for category_name in category_names_list %}
+    {% if category_name != " " %}
+      {% if category_name != "docs" %}
+        <li>
+          <a href="#{{ category_name | slugify }}">
+            <input type="checkbox" name="fl-status" value="{{ category_name }}" id="{{ category_name }}" checked/>
+            <strong>{{ category_name }}</strong> <span class="taxonomy-count">{{ category_count }}</span>
+          </a>
+        </li>
+      {% endif %}
+      {% endif %}
     {% endfor %}
   {% endfor %}
 </ul>

@@ -1,10 +1,27 @@
 {% if entry.id %}
   {% assign title = entry.title | markdownify | strip_html %}
+  {% assign categories = entry.categories | markdownify | strip_html %}
 {% else %}
   {% assign title = entry.title %}
+  {% assign categories = entry.categories %}
 {% endif %}
 
-<article class="entry h-entry">
+{% for category in categories %}
+  {% if category contains 'ONGOING' %}
+    {% assign cat = 'ONGOING' %}
+  {% endif %}
+  {% if category contains 'COMPLETED' %}
+    {% assign cat = 'COMPLETED' %}
+  {% endif %}
+  {% if category contains 'STUB' %}
+    {% assign cat = 'STUB' %}
+  {% endif %}
+  {% if category contains 'HIATUS' %}
+    {% assign cat = 'HIATUS' %}
+  {% endif %}
+{% endfor %}
+
+<article class="entry h-entry" data-category="{{ cat }}">
   <header class="entry-header">
     <h3 class="entry-title p-name">
       {% if entry.link %}
@@ -23,7 +40,7 @@
           <div class="entry-excerpt p-summary" maxlength="20">
           {{ title }} <br>
           <time class="entry-date dt-published" datetime="{{ entry.date | date_to_xmlschema }}">
-            Last update:&nbsp; {%- assign date_format = site.date_format | default: "%B %-d, %Y" -%}
+            {{ cat }} Last update:&nbsp; {%- assign date_format = site.date_format | default: "%B %-d, %Y" -%}
             {{ entry.date | date: date_format }}
           </time>
           {% unless page.show_excerpts == false %}
