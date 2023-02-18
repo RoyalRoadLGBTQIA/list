@@ -113,8 +113,12 @@ layout: page
     {% if category_name != " " %}
       {% if category_name != "docs" %}
         <li>
-          <a href="#{{ category_name | slugify }}">
+          <a href="{{ category_name | slugify }}">
+            {% if category_name == "HIATUS" %}
+            <input type="checkbox" name="fl-status" value="{{ category_name }}" id="{{ category_name }}" unchecked/>
+            {% else %}
             <input type="checkbox" name="fl-status" value="{{ category_name }}" id="{{ category_name }}" checked/>
+            {% endif %}
             <strong>{{ category_name }}</strong> <span class="taxonomy-count">{{ category_count }}</span>
           </a>
         </li>
