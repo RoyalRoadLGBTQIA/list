@@ -4,7 +4,133 @@ layout: page
 
 {{ content }}
 
-<div class="entries-{{ page.entries_layout | default: 'list' }}">
+{% assign tags_max = 0 %}
+{% for tag in site.tags %}
+  {% if tag[1].size > tags_max %}
+    {% assign tags_max = tag[1].size %}
+  {% endif %}
+{% endfor %}
+
+{% assign tag_names_array = "" %}
+{% assign tag_counts = "" %}
+{% assign first_array_element = true %}
+{% for i in (1..tags_max) reversed %}
+  {% assign tag_names = "" %}
+  {% assign first_tag = true %}
+
+  {% for tag in site.tags %}
+    {% if tag[1].size == i %}
+      {% if first_tag %}
+        {% assign first_tag = false %}
+      {% else %}
+        {% assign tag_names = tag_names | append: "," %}
+      {% endif %}
+      {% assign tag_names = tag_names | append: tag[0] %}
+    {% endif %}
+  {% endfor %}
+
+  {% if tag_names != "" %}
+    {% assign tag_names = tag_names | split: "," | sort | join: "," %}
+
+    {% if first_array_element %}
+      {% assign first_array_element = false %}
+    {% else %}
+      {% assign tag_names_array = tag_names_array | append: "|" %}
+      {% assign tag_counts = tag_counts | append: "|" %}
+    {% endif %}
+    {% assign tag_names_array = tag_names_array | append: tag_names %}
+    {% assign tag_counts = tag_counts | append: i %}
+  {% endif %}
+{% endfor %}
+
+{% assign tag_names_array = tag_names_array | split: "|" %}
+{% assign tag_counts = tag_counts | split: "|" %}
+
+{% assign categories_max = 0 %}
+{% for category in site.categories %}
+  {% if category[1].size > categories_max %}
+    {% assign categories_max = category[1].size %}
+  {% endif %}
+{% endfor %}
+
+{% assign category_names_array = "" %}
+{% assign category_counts = "" %}
+{% assign first_array_element = true %}
+{% for i in (1..categories_max) reversed %}
+  {% assign category_names = "" %}
+  {% assign first_category = true %}
+
+  {% for category in site.categories %}
+    {% if category[1].size == i %}
+      {% if first_category %}
+        {% assign first_category = false %}
+      {% else %}
+        {% assign category_names = category_names | append: "," %}
+      {% endif %}
+      {% assign category_names = category_names | append: category[0] %}
+    {% endif %}
+  {% endfor %}
+
+  {% if category_names != "" %}
+    {% assign category_names = category_names | split: "," | sort | join: "," %}
+
+    {% if first_array_element %}
+      {% assign first_array_element = false %}
+    {% else %}
+      {% assign category_names_array = category_names_array | append: "|" %}
+      {% assign category_counts = category_counts | append: "|" %}
+    {% endif %}
+    {% assign category_names_array = category_names_array | append: category_names %}
+    {% assign category_counts = category_counts | append: i %}
+  {% endif %}
+{% endfor %}
+
+{% assign category_names_array = category_names_array | split: "|" %}
+{% assign category_counts = category_counts | split: "|" %}
+<ul class="taxonomy-index">
+  {% for tag_names in tag_names_array %}
+    {% assign tag_names_list = tag_names | split: "," %}
+    {% assign tag_count = tag_counts[forloop.index0] %}
+    {% for tag_name in tag_names_list %}
+      <li>
+        <a href="#{{ tag_name | slugify }}">
+          <input type="checkbox" name="fl-tag" value="{{ tag_name }}" id="{{ tag_name }}" checked/>
+          <strong>{{ tag_name }}</strong> <span class="taxonomy-count">{{ tag_count }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  {% endfor %}
+</ul>
+<br>
+<ul class="taxonomy-index">
+  {% for category_names in category_names_array %}
+    {% assign category_names_list = category_names | split: "," %}
+    {% assign category_count = category_counts[forloop.index0] %}
+    {% for category_name in category_names_list %}
+    {% if category_name != " " %}
+      {% if category_name != "docs" %}
+        <li>
+          <a href="{{ category_name | slugify }}">
+            {% if category_name == "HIATUS" %}
+            <input type="checkbox" name="fl-status" value="{{ category_name }}" id="{{ category_name }}" unchecked/>
+            {% else %}
+            <input type="checkbox" name="fl-status" value="{{ category_name }}" id="{{ category_name }}" checked/>
+            {% endif %}
+            <strong>{{ category_name }}</strong> <span class="taxonomy-count">{{ category_count }}</span>
+          </a>
+        </li>
+      {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</ul>
+<br>
+{%- for entry in site.posts -%}
+  {% include entry.html %}
+{%- endfor -%}
+
+
+<!--div class="entries-{{ page.entries_layout | default: 'list' }}">
 
   {%- if site.plugins contains 'jekyll-paginate' and page.paginate or site.gems contains 'jekyll-paginate' and page.paginate -%}
     {%- comment -%}
@@ -15,4 +141,4 @@ layout: page
   {%- else -%}
     {% include posts-limit.html %}
   {%- endif -%}
-</div>
+</div-->

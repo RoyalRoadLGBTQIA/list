@@ -1,22 +1,24 @@
 var $filterCheckboxes = $('input[type="checkbox"]');
+var $filterStatus = $('input[name="fl-status"]');
+var $filterTags = $('input[name="fl-tag"]');
+
 var filterFunc = function() {
   
   var selectedFilters = {};
   $filterCheckboxes.filter(':checked').each(function() {
-
+    
     if (!selectedFilters.hasOwnProperty(this.name)) {
       selectedFilters[this.name] = [];
     }
-
     selectedFilters[this.name].push(this.value);
   });
-
+  
   var $filteredResults = $('.entry');
   $.each(selectedFilters, function(name, filterValues) {
     $filteredResults = $filteredResults.filter(function() {
 
       var matched = false,
-        currentFilterValues = $(this).data('category').split(' ');
+        currentFilterValues = $(this).data('category').split(',');
       $.each(currentFilterValues, function(_, currentFilterValue) {
         if ($.inArray(currentFilterValue, filterValues) != -1) {
           matched = true;
@@ -27,7 +29,12 @@ var filterFunc = function() {
 
     });
   });
-  $('.entry').hide().filter($filteredResults).show();
+
+  if(Object.keys(selectedFilters).length === 2){
+    $('.entry').hide().filter($filteredResults).show();
+  } else {
+    $('.entry').hide();
+  }
 }
 
 $(document).ready(function() {

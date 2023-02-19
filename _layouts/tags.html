@@ -89,8 +89,6 @@ layout: page
 
 {% assign category_names_array = category_names_array | split: "|" %}
 {% assign category_counts = category_counts | split: "|" %}
-
-
 <ul class="taxonomy-index">
   {% for tag_names in tag_names_array %}
     {% assign tag_names_list = tag_names | split: "," %}
@@ -98,13 +96,14 @@ layout: page
     {% for tag_name in tag_names_list %}
       <li>
         <a href="#{{ tag_name | slugify }}">
+          <input type="checkbox" name="fl-tag" value="{{ tag_name }}" id="{{ tag_name }}" checked/>
           <strong>{{ tag_name }}</strong> <span class="taxonomy-count">{{ tag_count }}</span>
         </a>
       </li>
     {% endfor %}
   {% endfor %}
 </ul>
-
+<br>
 <ul class="taxonomy-index">
   {% for category_names in category_names_array %}
     {% assign category_names_list = category_names | split: "," %}
@@ -127,7 +126,13 @@ layout: page
     {% endfor %}
   {% endfor %}
 </ul>
+<br>
+{%- for entry in site.posts -%}
+  {% include entry.html %}
+{%- endfor -%}
 
+
+<!--
 {% for tag_names in tag_names_array %}
   {% assign tag_names_list = tag_names | split: "," %}
   {% for tag_name in tag_names_list %}
@@ -146,3 +151,4 @@ layout: page
     </section>
   {% endfor %}
 {% endfor %}
+-->
