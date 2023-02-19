@@ -95,7 +95,7 @@ layout: page
     {% assign tag_count = tag_counts[forloop.index0] %}
     {% for tag_name in tag_names_list %}
       <li>
-        <a href="#{{ tag_name | slugify }}">
+        <a href="{{ tag_name | slugify }}">
           <input type="checkbox" name="fl-tag" value="{{ tag_name }}" id="{{ tag_name }}" checked/>
           <strong>{{ tag_name }}</strong> <span class="taxonomy-count">{{ tag_count }}</span>
         </a>
