@@ -29,7 +29,7 @@ for filename in os.listdir(os.getcwd()):
       print ("Skip...hiatus...")
    elif filename.endswith(".py"):
       print ("Py file...")
-   elif filename.startswith("2023-"):
+   elif filename.startswith("2022-"):
       preStrFind = 'ONGOING'
       strOngoing = False
       with open(os.path.join(os.getcwd(), filename), 'r+') as checkFile: 
