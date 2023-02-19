@@ -53,18 +53,17 @@
   display: block;
 }
 
-.entry-meta {
-  .entry-date,
-  .read-time {
-    font-family: $meta-font-family;
-    font-style: italic;
-    white-space: nowrap;
-  }
 
-  .read-time + .entry-date::before {
-    content: "\2022";
-    padding: 0 0.5em;
-  }
+.entry-date,
+.read-time {
+  font-family: $meta-font-family;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.read-time + .entry-date::before {
+  content: "\2022";
+  padding: 0 0.5em;
 }
 
 .entry-excerpt a,
@@ -213,4 +212,15 @@
       text-decoration: none;
     }
   }
+}
+
+#fix_excerpts_format {
+  font-size: 1rem;
+  font-weight: lighter !important;
+}
+
+#fix_time_format {
+  font-size: 1rem;
+  font-style: italic !important;
+  font-weight: lighter !important;
 }

@@ -40,22 +40,21 @@
             {% assign entry_image = entry_image | escape %}
 
             <img class="entry-image u-photo" src="{{ entry_image }}" alt="" onerror="this.onerror=null; this.src='https://royalroadlgbtqia.github.io/list/images/nofound.png'">
-            
-
           {% endif %}
           <div class="entry-excerpt p-summary" maxlength="20">
             {{ title }}<br>
-          <time class="entry-date dt-published" datetime="{{ entry.date | date_to_xmlschema }}">
-            {{ cat }} Last update:&nbsp; {%- assign date_format = site.date_format | default: "%B %-d, %Y" -%}
+          <time class="entry-date dt-published" datetime="{{ entry.date | date_to_xmlschema }}" id="fix_time_format">
+            Last update:&nbsp; {%- assign date_format = site.date_format | default: "%B %-d, %Y" -%}
             {{ entry.date | date: date_format }}
           </time>
+          <div id="fix_excerpts_format">
           {% unless page.show_excerpts == false %}
             
               {% if entry.excerpt %}
                 {{ entry.excerpt | markdownify }}
               {% endif %}
             
-          {% endunless %}
+          {% endunless %}</div>
         </div>
         </a> <a href="{{ entry.link }}" rel="bookmark"></a>
       {% else %}
