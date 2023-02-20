@@ -93,7 +93,7 @@ layout: page
     {% assign tag_count = tag_counts[forloop.index0] %}
     {% for tag_name in tag_names_list %}
       <li>
-        <a href="">
+        <a href="javascript:void(0)">
           <input type="checkbox" name="fl-tag" value="{{ tag_name }}" id="{{ tag_name }}" checked/>
           <strong>{{ tag_name }}</strong> <span class="taxonomy-count">{{ tag_count }}</span>
         </a>
@@ -110,7 +110,7 @@ layout: page
     {% if category_name != " " %}
       {% if category_name != "docs" %}
         <li>
-          <a href="">
+          <a href="javascript:void(0)">
             {% if category_name == "HIATUS" %}
             <input type="checkbox" name="fl-status" value="{{ category_name }}" id="{{ category_name }}" unchecked/>
             {% else %}
