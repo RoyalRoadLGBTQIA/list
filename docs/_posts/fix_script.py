@@ -11,7 +11,7 @@ newFileName = []
 stringSyndi = 'https://www.royalroad.com/fiction/syndication/'
 
 for filename in os.listdir(os.getcwd()):
-   if filename.startswith("2023-02-20-F"):
+   if filename.startswith("2023-02-21-"):
       print ("Skip...3")
    elif filename.startswith("2021"):
       print ("Skip...2021 done")
@@ -29,7 +29,7 @@ for filename in os.listdir(os.getcwd()):
       print ("Skip...hiatus...")
    elif filename.endswith(".py"):
       print ("Py file...")
-   elif filename.startswith("2022-"):
+   elif filename.startswith("2023-"):
       preStrFind = 'ONGOING'
       strOngoing = False
       with open(os.path.join(os.getcwd(), filename), 'r+') as checkFile: 
@@ -44,7 +44,11 @@ for filename in os.listdir(os.getcwd()):
          print (basename)
          rrid_arr = basename.split("-")
          rrid = rrid_arr[3].replace(".md", "")
-         rrid_url = rrid.replace("F", stringSyndi)
+         if rrid.__contains__("F") is True:
+            rrid_url = rrid.replace("F", stringSyndi)
+         else:
+            rrid_url = rrid.replace("Z", stringSyndi)
+         
          print (rrid_url)
 
          response = requests.get(rrid_url, headers=headers, timeout=100)
