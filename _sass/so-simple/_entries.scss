@@ -215,12 +215,15 @@
 }
 
 #fix_excerpts_format {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: lighter !important;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal !important;
 }
 
 #fix_time_format {
   font-size: 1rem;
-  font-style: italic !important;
+  font-style: normal !important;
   font-weight: lighter !important;
+  color: #9a9292;
 }
