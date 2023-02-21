@@ -23,7 +23,7 @@ description: "A simple Jekyll theme for words and pictures."
 baseurl: "/so-simple-theme"
 url: "https://mmistakes.github.io"
 logo: "/images/so-simple-site-logo.png"
-date_format: "%B %-d, %Y"
+date_format: "%b %-d, %Y"
 read_time: true
 words_per_minute: # 200
 mathjax:

@@ -21,11 +21,36 @@
   {% endif %}
 {% endfor %}
 
-{% assign tags_name = cat | prepend: "," %}
+{% assign tags_name = "" %}
+{% assign tags_img_list = "" %}
+
 {% for tag in entry.tags %}
   {% assign tags_name = tags_name | prepend: tag | prepend: "," %}
+  {% if tag contains 'WLW' %}
+    {% assign tags_img_list = tags_img_list | append: ',' | append: 'images/lesbian.png' %}
+  {% endif %}
+  {% if tag contains 'MLM' %}
+    {% assign tags_img_list = tags_img_list | append: ',' | append: 'images/gay.png' %}
+  {% endif %}
+  {% if tag contains 'Trans' %}
+    {% assign tags_img_list = tags_img_list | append: ',' | append: 'images/trans.png' %}
+  {% endif %}
+  {% if tag contains 'Bi' %}
+    {% assign tags_img_list = tags_img_list | append: ',' | append: 'images/bi.png' %}
+  {% endif %}
+  {% if tag contains 'Ace' %}
+    {% assign tags_img_list = tags_img_list | append: ',' | append: 'images/ace.png' %}
+  {% endif %}
+  {% if tag contains 'Queer' %}
+    {% assign tags_img_list = tags_img_list | append: ',' | append: 'images/queer.png' %}
+  {% endif %}
+  {% if tag contains 'Intersex' %}
+    {% assign tags_img_list = tags_img_list | append: ',' | append: 'images/int.png' %}
+  {% endif %}
 {% endfor %}
-{% assign tags_name = tags_name | remove_first: "," %}
+{% assign tags_img_list = tags_img_list | remove_first: "," %}
+{% assign tags_name = tags_name | prepend: cat %}
+{% assign tag_arr = tags_img_list | split: "," %}
 
 <article class="entry h-entry" data-category="{{ tags_name }}">
   <header class="entry-header">
@@ -42,9 +67,14 @@
             <img class="entry-image u-photo" src="{{ entry_image }}" alt="" onerror="this.onerror=null; this.src='https://royalroadlgbtqia.github.io/list/images/nofound.png'">
           {% endif %}
           <div class="entry-excerpt p-summary" maxlength="20">
-            {{ title }}<br>
+            {{ title }} 
+
+          {%- for tag_img in tag_arr -%}
+            <img src="{{ tag_img }}" width="22" height="22" style='margin-right:1px;display:inline;'>
+          {%- endfor -%}
+            <br>
           <time class="entry-date dt-published" datetime="{{ entry.date | date_to_xmlschema }}" id="fix_time_format">
-            {{ cat }} Last update:&nbsp; {%- assign date_format = site.date_format | default: "%B %-d, %Y" -%}
+            {{ cat }} -Updated:&nbsp; {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
             {{ entry.date | date: date_format }}
           </time>
           <div id="fix_excerpts_format">
