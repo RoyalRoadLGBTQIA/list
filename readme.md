@@ -29,3 +29,9 @@ function initialize() {
 }
 google.setOnLoadCallback(initialize);
 ```
+
+```python
+cd docs/_posts/
+python3 fix_script.py
+
+```
