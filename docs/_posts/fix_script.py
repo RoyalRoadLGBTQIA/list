@@ -11,7 +11,7 @@ newFileName = []
 stringSyndi = 'https://www.royalroad.com/fiction/syndication/'
 
 for filename in os.listdir(os.getcwd()):
-   if filename.startswith("2023-03-15"):
+   if filename.startswith("2023-03-16"):
       print ("Skip...3")
    elif filename.startswith("2021"):
       print ("Skip...2021 done")
